@@ -1,0 +1,16 @@
+class Solution {
+    public int[] twoSum(int[] nums, int k) {
+        int arr[]=new int[2];
+        HashMap<Integer,Integer> ls=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if(ls.containsKey(k-nums[i])){
+                int fe=ls.get(k-nums[i]);
+                    arr[0]=i;
+                arr[1]=fe;
+                break;
+            }
+            ls.put(nums[i],i);
+        }
+        return arr;
+    }
+}
