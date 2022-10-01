@@ -1,0 +1,33 @@
+public class Poly {
+        public  double area() {
+            return 0.0;
+        }
+    public static void main(String[] args) {
+        Poly obj1=new Cricle(4);
+        Poly obj2=new Square(4);
+        System.out.println(obj1.area());
+        System.out.println(obj2.area());
+    }
+}
+
+class Cricle extends Poly{
+    int ra;
+    Cricle(int radius){
+            this.ra=radius;
+    }
+    @Override
+    public double area() {
+       
+        return Math.PI*ra*ra;
+    }
+}
+class Square extends Poly{
+    int ra;
+    Square(int radius){
+        this.ra=radius;
+    }
+    @Override
+    public double area() {
+        return ra*ra;
+    }
+}
