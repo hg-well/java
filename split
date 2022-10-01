@@ -1,0 +1,45 @@
+import java.util.*;
+public class Solution {
+    static int j=0;
+    public static void help(String s){
+        String numberOnly[]= s.replaceAll("[^0-9]", " ").split(" ");
+        System.out.println(numberOnly);
+            Stack<Character> st=new Stack<>();
+            String str="";
+            for(char ch:s.toCharArray()){
+             
+                StringBuilder  temp=new StringBuilder();
+                    if(Character.isLetter(ch)){
+                        st.push(ch);
+                    }
+                   
+                    else{
+                        int a=0;
+                            while(st.size()>0){
+                                temp.append(st.pop());
+                            }
+                           String ans= temp.reverse().toString();
+                            int num=Integer.parseInt(numberOnly[j++]);
+                            while(num>0){
+                              str+=ans;
+                               num--;
+                            }
+                    }
+                   
+                    temp=new StringBuilder("");
+            }
+            if(st.size()>0){
+                str+=st.pop();
+            }
+            System.out.println(str);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+      int l=sc.nextInt();
+      String st=sc.next();
+        help("anbs12bv45nv");
+        }
+    }
+}
