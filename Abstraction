@@ -1,0 +1,32 @@
+interface Inder{
+       public default void myMeth(){
+        System.out.println("Simple method call from Inder");
+       }
+       abstract public void absMethod();
+}
+
+class InderAbs{
+    public static void main(String[] args) {
+        Inder obj=new Drilling();
+        obj.myMeth();
+
+    }
+}
+
+class Drilling implements Inder{
+
+    @Override
+    public void absMethod() {
+        System.out.println("Hello from drilling");
+        
+    }
+
+    @Override
+    public void myMeth() {
+        System.out.println("Hello from drilling");
+    }
+
+   
+    
+
+}
